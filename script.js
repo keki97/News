@@ -63,6 +63,7 @@ getArticles();
 container.addEventListener("click", async function (e) {
   e.preventDefault();
   if (e.target.classList.contains("news-link")) {
+    container.style.display = "block";
     const id = e.target.getAttribute("data-id");
 
     container.innerHTML = "";
@@ -77,6 +78,7 @@ container.addEventListener("click", async function (e) {
     renderOneArticle(articles);
   } else if (e.target.classList.contains("news-solo-link")) {
     container.innerHTML = "";
+    container.style.display = "grid";
     headerEl.style.display = "flex";
 
     getArticles();
